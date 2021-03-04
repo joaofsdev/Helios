@@ -44,7 +44,7 @@ Cada eleitor precisa receber por e-mail suas credenciais (*login* e senha) exclu
 
     - **Todos os eleitores registrados**; ou
     - **Somente para os eleitores que já depositaram uma cédula**; ou
-    - **Somente para os eleitores que não depositaram qualquer cédula**; ou ainda
+    - **Somente para os eleitores que não depositaram qualquer cédula**.
 
 5. Clique no botão **Enviar**. 
 
