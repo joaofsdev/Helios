@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.2.5">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-2.2.5">
     
     
       
@@ -73,7 +73,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Helios - Sistema de votação eletrônica" class="md-header-nav__button md-logo">
+        <a href="" title="Helios - Sistema de votação eletrônica" class="md-header-nav__button md-logo">
           
             <i class="md-icon">home</i>
           
@@ -159,7 +159,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Inicial" class="md-nav__link">
+    <a href="" title="Inicial" class="md-nav__link">
       Inicial
     </a>
   </li>
@@ -171,7 +171,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../eleitor/" title="Eleitor - como votar" class="md-nav__link">
+    <a href="eleitor/" title="Eleitor - como votar" class="md-nav__link">
       Eleitor - como votar
     </a>
   </li>
@@ -183,7 +183,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../criar/" title="Gestor - Como criar uma eleição" class="md-nav__link">
+    <a href="criar/" title="Gestor - Como criar uma eleição" class="md-nav__link">
       Gestor - Como criar uma eleição
     </a>
   </li>
@@ -207,7 +207,7 @@
         Gestor - Como iniciar uma eleição
       </label>
     
-    <a href="./" title="Gestor - Como iniciar uma eleição" class="md-nav__link md-nav__link--active">
+    <a href="abrir/" title="Gestor - Como iniciar uma eleição" class="md-nav__link md-nav__link--active">
       Gestor - Como iniciar uma eleição
     </a>
     
@@ -250,7 +250,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../fechar/" title="Gestor - Como finalizar uma eleição" class="md-nav__link">
+    <a href="fechar/" title="Gestor - Como finalizar uma eleição" class="md-nav__link">
       Gestor - Como finalizar uma eleição
     </a>
   </li>
@@ -262,7 +262,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../estatisticas/" title="Gestor - Estatísticas" class="md-nav__link">
+    <a href="estatisticas/" title="Gestor - Estatísticas" class="md-nav__link">
       Gestor - Estatísticas
     </a>
   </li>
@@ -274,7 +274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../apurador-gerar/" title="Gestor - Como gerar chave do apurador" class="md-nav__link">
+    <a href="apurador-gerar/" title="Gestor - Como gerar chave do apurador" class="md-nav__link">
       Gestor - Como gerar chave do apurador
     </a>
   </li>
@@ -286,7 +286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../apurador-usar/" title="Apurador - Como usar chave do apurador" class="md-nav__link">
+    <a href="apurador-usar/" title="Apurador - Como usar chave do apurador" class="md-nav__link">
       Apurador - Como usar chave do apurador
     </a>
   </li>
@@ -298,7 +298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../faq/" title="FAQ - Perguntas Frequentes" class="md-nav__link">
+    <a href="faq/" title="FAQ - Perguntas Frequentes" class="md-nav__link">
       FAQ - Perguntas Frequentes
     </a>
   </li>
@@ -384,13 +384,13 @@
 <p><strong>Se deseja enviar e-mail em massa</strong> (para todos eleitores cadastrados), clique no botão <strong>Enviar e-mail para eleitores</strong>.</p>
 </li>
 <li>
-<p><strong>Se deseja enviar e-mail para um eleitor em específico</strong>, então clique no ícone do envelope azul que esteja na linha com o nome do eleitor para quem deseja enviar e-mail.</p>
+<p><strong>Se deseja enviar e-mail para um eleitor em específico</strong>, então clique no ícone do envelope verde que esteja na linha com o nome do eleitor para quem deseja enviar e-mail.</p>
 </li>
 <li>
 <p><strong>Se deseja adicionar novos eleitores</strong>, então clique no botão <strong>Carregar arquivo de eleitores</strong>.</p>
 </li>
 <li>
-<p><strong>Se deseja remover um eleitor em específico</strong>, então clique no ícone de um X azul que esteja na linha com o nome do eleitor que deseja excluir.</p>
+<p><strong>Se deseja remover um eleitor em específico</strong>, então clique no ícone de um X verde que esteja na linha com o nome do eleitor que deseja excluir.</p>
 <p><img alt="Enviar e-mail para eleitores" src="../img/helios-enviar-email.png" /></p>
 </li>
 </ul>
@@ -410,14 +410,6 @@
 <li><strong>Todos os eleitores registrados</strong>; ou</li>
 <li><strong>Somente para os eleitores que já depositaram uma cédula</strong>; ou</li>
 <li><strong>Somente para os eleitores que não depositaram qualquer cédula</strong>; ou ainda</li>
-<li><strong>Envio contingenciado</strong> - somente para os eleitores que ainda não receberam e-mail (<strong>X/Y</strong>)<ul>
-<li><strong>ATENÇÃO:</strong> Só use essa opção após consultar a equipe técnica de TI </li>
-<li>Essa opção permite o envio de pequenos lotes de e-mail, cujo tamanho foi definido em tempo de implantação (por padrão 1.000). Toda vez que essa opção for escolhida, serão enviados e-mails para os próximos 1.000 eleitores da lista.</li>
-<li>O <strong>valor X</strong> indica o total de eleitores que já recebeu e-mail desse modelo (tipo de e-mail).</li>
-<li>O <strong>valor Y</strong> indica o total de eleitores registrados para a eleição.</li>
-<li><strong>Atenção:</strong> O administrador da eleição é o único responsável por garantir que todos os eleitores de uma eleição receberam o e-mail. Ou seja, o valor de <strong>X</strong> deverá ser igual ao valor de <strong>Y</strong>.</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>
@@ -446,7 +438,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../criar/" title="Gestor - Como criar uma eleição" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="criar/" title="Gestor - Como criar uma eleição" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -461,7 +453,7 @@
           </a>
         
         
-          <a href="../fechar/" title="Gestor - Como finalizar uma eleição" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="fechar/" title="Gestor - Como finalizar uma eleição" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
@@ -516,7 +508,7 @@
           
         
       
-      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       
     
     
