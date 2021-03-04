@@ -24,10 +24,12 @@ theme:
   logo:
     icon: 'home'
   favicon: 'assets/images/favicon.ico'
-  language: pt
+  language: 'pt'
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
   extra:
   search:
     language: 'pt'
+  feature:
+    navigation.tabs

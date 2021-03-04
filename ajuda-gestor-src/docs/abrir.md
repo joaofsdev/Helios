@@ -26,11 +26,11 @@ Cada eleitor precisa receber por e-mail suas credenciais (*login* e senha) exclu
 1. Na página inicial da eleição clique no botão **Eleitores & cédulas**.
     - **Se deseja enviar e-mail em massa** (para todos eleitores cadastrados), clique no botão **Enviar e-mail para eleitores**.
 
-    - **Se deseja enviar e-mail para um eleitor em específico**, então clique no ícone do envelope azul que esteja na linha com o nome do eleitor para quem deseja enviar e-mail.
+    - **Se deseja enviar e-mail para um eleitor em específico**, então clique no ícone do envelope verde que esteja na linha com o nome do eleitor para quem deseja enviar e-mail.
 
     - **Se deseja adicionar novos eleitores**, então clique no botão **Carregar arquivo de eleitores**.
 
-    - **Se deseja remover um eleitor em específico**, então clique no ícone de um X azul que esteja na linha com o nome do eleitor que deseja excluir.
+    - **Se deseja remover um eleitor em específico**, então clique no ícone de um X verde que esteja na linha com o nome do eleitor que deseja excluir.
 
         ![Enviar e-mail para eleitores](img/helios-enviar-email.png)
 
@@ -45,12 +45,6 @@ Cada eleitor precisa receber por e-mail suas credenciais (*login* e senha) exclu
     - **Todos os eleitores registrados**; ou
     - **Somente para os eleitores que já depositaram uma cédula**; ou
     - **Somente para os eleitores que não depositaram qualquer cédula**; ou ainda
-    - **Envio contingenciado** - somente para os eleitores que ainda não receberam e-mail (**X/Y**)
-        - **ATENÇÃO:** Só use essa opção após consultar a equipe técnica de TI 
-        - Essa opção permite o envio de pequenos lotes de e-mail, cujo tamanho foi definido em tempo de implantação (por padrão 1.000). Toda vez que essa opção for escolhida, serão enviados e-mails para os próximos 1.000 eleitores da lista.
-        - O **valor X** indica o total de eleitores que já recebeu e-mail desse modelo (tipo de e-mail).
-        - O **valor Y** indica o total de eleitores registrados para a eleição.
-        - **Atenção:** O administrador da eleição é o único responsável por garantir que todos os eleitores de uma eleição receberam o e-mail. Ou seja, o valor de **X** deverá ser igual ao valor de **Y**.
 
 5. Clique no botão **Enviar**. 
 
@@ -58,5 +52,3 @@ Cada eleitor precisa receber por e-mail suas credenciais (*login* e senha) exclu
 
 
 ![Enviando e-mail para eleitores](img/helios-email-hora-votar.png)
-
-
