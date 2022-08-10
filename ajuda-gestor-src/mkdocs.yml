@@ -2,11 +2,12 @@
 # Para rodar um servidor para testes: mkdocs serve
 
 site_name: Helios - Sistema de votação eletrônica
+site_url: http://localhost:8090/ajuda-gestor/
 site_description: 'Ajuda do sistema de votação eletrônica'
 site_author: 'Instituto Federal de Santa Catarina'
 copyright: 'Copyright &copy; 2018 - IFSC'
 
-nave:
+nav:
     - Inicial: index.md
     - Eleitor - como votar: eleitor.md
     - Gestor - Como criar uma eleição: criar.md
@@ -19,6 +20,8 @@ nave:
 
 theme:
   name: 'material'
+  features:
+    - toc.follow
   # include_sidebar: false
   custom_dir: 'theme'
   logo:
@@ -28,14 +31,6 @@ theme:
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
-  feature:
-    - search.suggest
-    - search.highlight
-    - search.share
-    - navigation.tabs
-    - navigation.instant
-    - navigation.tracking
-    - navigation.top
   extra:
   search:
     language: 'pt'

@@ -20,13 +20,7 @@ theme:
     text: 'Roboto'
     code: 'Roboto Mono'
   feature:
-    - search.suggest
-    - search.highlight
-    - search.share
     - navigation.tabs
-    - navigation.instant
-    - navigation.tracking
-    - navigation.top
   extra:
   search:
     language: 'pt'
