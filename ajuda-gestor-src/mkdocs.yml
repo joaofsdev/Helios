@@ -6,7 +6,7 @@ site_description: 'Ajuda do sistema de votação eletrônica'
 site_author: 'Instituto Federal de Santa Catarina'
 copyright: 'Copyright &copy; 2018 - IFSC'
 
-pages:
+nave:
     - Inicial: index.md
     - Eleitor - como votar: eleitor.md
     - Gestor - Como criar uma eleição: criar.md
@@ -28,6 +28,14 @@ theme:
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
+  feature:
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
   extra:
   search:
     language: 'pt'

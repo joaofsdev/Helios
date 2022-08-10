@@ -99,7 +99,7 @@ Porém, se está criando uma eleição onde é necessário separar a responsabil
 ### Adicionar apuradores humanos
 
 1. Na página inicial da eleição clique no botão **Apuradores**.
-2. Clique no **ícone X azul** que aparece no lado direito para **remover o apurador #1 Sistema de Votação Eletrônica**.
+2. Clique no **ícone X** que aparece no lado direito para **remover o apurador #1 Sistema de Votação Eletrônica**.
 3. Clique no botão **Adicionar um apurador**.
 
 ![Adicionar apurador humano](img/helios-adicionar-apurador.png)
@@ -108,7 +108,7 @@ Porém, se está criando uma eleição onde é necessário separar a responsabil
 
 1. Forneça o Nome Completo e o endereço de e-mail da pessoa que será o apurador e clique no botão **Adicionar Apurador**
    - É possível adicionar quantos apuradores desejar, porém tenha em mente que essas pessoas serão as únicas que poderão abrir a urna para realizar a apuração. Basta que uma dessas pessoas não forneça sua chave para abrir a urna e isso será o suficiente para impedir que a urna seja aberta. Tenha cautela ao usar apuradores humanos
-2. Para que o apurador receba as instruções por e-mail, clique no **ícone azul de um envelope** que aparece para cada apurador. 
+2. Para que o apurador receba as instruções por e-mail, clique no **ícone de um envelope** que aparece para cada apurador. 
 3. Você poderá ver o “código de identificação da chave pública” dos apuradores assim que eles carregarem suas chaves (de acordo com o manual **[Como gerar e carregar sua chave criptográfica](apurador-gerar)**). Se esta informação estiver em branco, então significa que o apurador ainda não carregou sua chave pública.
     ![](img/lista-apuradores.png)
 4. Por fim, clique no link **Voltar para a eleição** e vá para o manual **[Como iniciar uma eleição](abrir.md)**.
