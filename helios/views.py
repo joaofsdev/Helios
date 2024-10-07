@@ -1561,7 +1561,3 @@ def ballot_list(request, election):
 
   # we explicitly cast this to a short cast vote
   return [v.last_cast_vote().ld_object.short.toDict(complete=True) for v in voters]
-
-
-
-

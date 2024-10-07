@@ -134,7 +134,7 @@ class Institution(models.Model):
 class InstitutionUserProfile(models.Model):
 
     helios_user = models.ForeignKey('helios_auth.User', blank=True, default=None, null=True, on_delete=models.CASCADE)
-    django_user = models.ForeignKey(User, unique=True, on_delete=models.CASCADE)
+    django_user = models.OneToOneField(User, on_delete=models.CASCADE)
     institution = models.ForeignKey("heliosinstitution.Institution", on_delete=models.CASCADE)
     email = models.EmailField(max_length=254)
     expires_at = models.DateTimeField(auto_now_add=False, default=None, null=True, blank=True)

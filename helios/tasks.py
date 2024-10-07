@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 """
 Celery queued tasks for Helios
 
 2010-08-01
 ben@adida.net
 """
+import random
 import copy
 from celery import shared_task
 from celery.utils.log import get_logger
@@ -55,7 +57,12 @@ def voters_email(election_id, subject_template, body_template, extra_vars={},
         voters = voters.exclude(**voter_constraints_exclude)
 
     for voter in voters:
-        single_voter_email.delay(voter.uuid, subject_template, body_template, extra_vars)
+        # Adiciona um delay dinâmico entre 4 e 15 segundos
+        delay_in_seconds = random.randint(5, 30)
+        single_voter_email.apply_async(
+            args=[voter.uuid, subject_template, body_template, extra_vars],
+            countdown=delay_in_seconds
+        )
 
 
 @shared_task

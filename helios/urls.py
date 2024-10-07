@@ -2,7 +2,7 @@
 from django.conf.urls import url, include
 
 import url_names as names
-import views
+from . import views
 
 urlpatterns = [
   url(r'^autologin$', views.admin_autologin),

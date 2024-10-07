@@ -25,8 +25,7 @@ DEBUG = (get_from_env('DEBUG', '1') == '1')
 #More info: https://docs.djangoproject.com/en/1.7/ref/settings/#allowed-hosts
 
 # set a value for production environment, alongside with debug set to false
-ALLOWED_HOSTS = get_from_env('ALLOWED_HOSTS', 'localhost').split(",")
-
+ALLOWED_HOSTS = ['*']
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = get_from_env('SECRET_KEY', 'replaceme')
 ROOT_URLCONF = 'urls'
@@ -53,15 +52,15 @@ SHOW_LOGIN_OPTIONS = (get_from_env('SHOW_LOGIN_OPTIONS', '1') == '1')
 SHOW_USER_INFO = (get_from_env('SHOW_USER_INFO', '1') == '1')
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': get_from_env('DB_NAME', 'helios'),
-        'USER': get_from_env('DB_USER', 'helios'),
-        'PASSWORD': get_from_env('DB_PWD', 'helios'),
-        'HOST': get_from_env('POSTGRES_HOST', 'db'),
-        'PORT': get_from_env('POSTGRES_PORT', '5432'),
-    }
-}
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+		'NAME': 'helios_beckhauser',
+		'USER': 'helios',
+		'HOST': 'localhost',
+		'PASSWORD': 'helios',
+
+		}
+	}
 
 # override if we have an env variable
 if get_from_env('DATABASE_URL', None):
@@ -117,6 +116,7 @@ STATICFILES_DIRS = (
     ROOT_PATH + '/helios/media',
     ROOT_PATH + '/server_ui/media',
     ROOT_PATH + '/heliosinstitution/media/',
+    ROOT_PATH + '/templates/ajuda-gestor/media/',
 )
 
 
@@ -200,7 +200,7 @@ INSTALLED_APPS = (
     'helioslog',
     'heliosinstitution',
     'django_celery_results',
-    'django_celery_beat'
+    'django_celery_beat',
 )
 
 ##
@@ -215,8 +215,8 @@ VOTER_UPLOAD_REL_PATH = "voters/%Y/%m/%d"
 
 
 # Change your email settings
-DEFAULT_FROM_EMAIL = get_from_env('DEFAULT_FROM_EMAIL', 'heliosvoting.pt@gmail.com')
-DEFAULT_FROM_NAME = get_from_env('DEFAULT_FROM_NAME', 'Sistema de Votação Eletrônica')
+DEFAULT_FROM_EMAIL = get_from_env('DEFAULT_FROM_EMAIL', 'votacaobks@diretasja.com.br')
+DEFAULT_FROM_NAME = get_from_env('DEFAULT_FROM_NAME', 'Diretas Ja - Sistema de Votação Eletrônica')
 SERVER_EMAIL = '%s <%s>' % (DEFAULT_FROM_NAME, DEFAULT_FROM_EMAIL)
 
 LOGIN_URL = '/auth/'
@@ -224,7 +224,7 @@ LOGOUT_ON_CONFIRMATION = True
 
 # The two hosts are here so the main site can be over plain HTTP
 # while the voting URLs are served over SSL.
-URL_HOST = get_from_env("URL_HOST", "http://localhost").rstrip("/")
+URL_HOST = get_from_env("URL_HOST", "http://54.81.22.174:8000").rstrip("/")
 
 # IMPORTANT: you should not change this setting once you've created
 # elections, as your elections' cast_url will then be incorrect.
@@ -232,17 +232,17 @@ URL_HOST = get_from_env("URL_HOST", "http://localhost").rstrip("/")
 SECURE_URL_HOST = get_from_env("SECURE_URL_HOST", URL_HOST).rstrip("/")
 
 # election stuff
-SITE_TITLE = get_from_env('SITE_TITLE', _('IFSC E-Voting System'))
-MAIN_LOGO_URL = get_from_env('MAIN_LOGO_URL', '/static/logo.png')
+SITE_TITLE = get_from_env('SITE_TITLE', _('Diretas Ja'))
+MAIN_LOGO_URL = get_from_env('MAIN_LOGO_URL', '/static/')
 ALLOW_ELECTION_INFO_URL = (get_from_env('ALLOW_ELECTION_INFO_URL', '0') == '1')
 
 # FOOTER links
 FOOTER_LINKS = json.loads(get_from_env('FOOTER_LINKS', '[]'))
 FOOTER_LOGO_URL = get_from_env('FOOTER_LOGO_URL', None)
 
-WELCOME_MESSAGE = get_from_env('WELCOME_MESSAGE', _('Welcome to IFSC E-Voting System'))
+WELCOME_MESSAGE = 'Bem-Vindo ao Diretas Já - Sistema de Votação Eletrônica'
 
-HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', 'shirlei@gmail.com')
+HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', 'votacaobks@diretasja.com.br')
 
 AUTH_TEMPLATE_BASE = "server_ui/templates/base.html"
 HELIOS_TEMPLATE_BASE = "server_ui/templates/base.html"
@@ -295,11 +295,12 @@ CLEVER_CLIENT_ID = get_from_env('CLEVER_CLIENT_ID', "")
 CLEVER_CLIENT_SECRET = get_from_env('CLEVER_CLIENT_SECRET', "")
 
 # email server
-EMAIL_HOST = get_from_env('EMAIL_HOST', 'localhost')
-EMAIL_PORT = int(get_from_env('EMAIL_PORT', "2525"))
-EMAIL_HOST_USER = get_from_env('EMAIL_HOST_USER', '')
-EMAIL_HOST_PASSWORD = get_from_env('EMAIL_HOST_PASSWORD', '')
-EMAIL_USE_TLS = (get_from_env('EMAIL_USE_TLS', '0') == '1')
+EMAIL_HOST = get_from_env('EMAIL_HOST', 'mail.diretasja.com.br')
+EMAIL_PORT = int(get_from_env('EMAIL_PORT', "465"))  # Porta SMTP 465
+EMAIL_HOST_USER = get_from_env('EMAIL_HOST_USER', 'votacaobks@diretasja.com.br')
+EMAIL_HOST_PASSWORD = get_from_env('EMAIL_HOST_PASSWORD', 'VotacaoBKS2@24')
+EMAIL_USE_SSL = (get_from_env('EMAIL_USE_SSL', '1') == '1')  # Usar SSL na porta 465
+EMAIL_USE_TLS = False  # TLS não é necessário se estiver usando SSL
 
 # to use AWS Simple Email Service
 # in which case environment should contain
@@ -329,20 +330,20 @@ CELERY_CACHE_BACKEND = 'django-cache'
 CELERY_RESULT_EXPIRES = 5184000  # 60 dias
 
 # see configuration example at https://pythonhosted.org/django-auth-ldap/example.html
-AUTH_LDAP_SERVER_URI = "ldap://ldap.forumsys.com" # replace by your Ldap URI
-AUTH_LDAP_BIND_DN = "cn=read-only-admin,dc=example,dc=com"
-AUTH_LDAP_BIND_PASSWORD = "password"
-AUTH_LDAP_USER_SEARCH = LDAPSearch("dc=example,dc=com",
+AUTH_LDAP_SERVER_URI = "ldap://localhost" # replace by your Ldap URI
+AUTH_LDAP_BIND_DN = "cn=admin,dc=beckhauser,dc=com"
+AUTH_LDAP_BIND_PASSWORD = "Silva2020#"
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=People,dc=beckhauser,dc=com",
     ldap.SCOPE_SUBTREE, "(uid=%(user)s)"
 )
 
 AUTH_LDAP_USER_ATTR_MAP = {
     "first_name": "givenName",
     "last_name": "sn",
-    "email": "mail",
+    #"email": "mail",
 }
 
-AUTH_LDAP_BIND_AS_AUTHENTICATING_USER = True
+AUTH_LDAP_BIND_AS_AUTHENTICATING_USER = False
 
 AUTH_LDAP_ALWAYS_UPDATE_USER = False
 
@@ -368,7 +369,11 @@ ELECTION_MANAGER_ATTRIBUTES = ['Provider']
 
 INSTITUTION_ROLE = ['Institution Admin','Election Admin']
 
-ATTRIBUTES_AUTOMATICALLY_CHECKED = ['brExitDate']
+ATTRIBUTES_AUTOMATICALLY_CHECKED = ['brExitDate']# to use AWS Simple Email Service
+# in which case environment should contain
+# AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+if get_from_env('EMAIL_USE_AWS', '0') == '1':
+    EMAIL_BACKEND = 'django_ses.SESBackend'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
